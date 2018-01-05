@@ -8,25 +8,35 @@ public class MusicPlayer : MonoBehaviour {
     // aka, it does not exist.
     static MusicPlayer instance = null;
 
-	// Use this for initialization
-	void Start () {
-
-        // Then using the 'instance' variable to check the condition, so if the MusicPlayer already exists
-        // (as it's been created by the Start scene), then do not create a new one when jumping to another
-        // scene
-        
-        if (instance !=null)
+    private void Awake()
+    {
+        // Moved the IF statement so that the duplication checker is ran before Start
+        // The bug here was that the duplicate would play for a fraction of a second because it was still
+        // being started and then being destroyed.
+        Debug.Log("Music player awake" + GetInstanceID());
+        if (instance != null)
         {
             Destroy(gameObject);
             Debug.Log("Duplicate destroyed.");
 
-        // OR if it doesn't exist for some strange reason, then actually create one to exist.
-        } else
+            // OR if it doesn't exist for some strange reason, then actually create one to exist.
+        }
+        else
         {
             // 'this' is used to 'claim' the instance and say yes, this is the global version of 'instance'
             instance = this;
             GameObject.DontDestroyOnLoad(gameObject);
         }
+    }
+
+    // Use this for initialization
+    void Start () {
+
+        // Then using the 'instance' variable to check the condition, so if the MusicPlayer already exists
+        // (as it's been created by the Start scene), then do not create a new one when jumping to another
+        // scene
+        Debug.Log("Music player start" + GetInstanceID());
+
 
         // gameObject with a small 'g' refers to the object the script is attached to
         GameObject.DontDestroyOnLoad(gameObject);
