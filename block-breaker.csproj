@@ -289,6 +289,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\Ball.cs" />
+    <Compile Include="Assets\scripts\Brick.cs" />
     <Compile Include="Assets\scripts\LevelManager.cs" />
     <Compile Include="Assets\scripts\LoseCollider.cs" />
     <Compile Include="Assets\scripts\MusicPlayer.cs" />
