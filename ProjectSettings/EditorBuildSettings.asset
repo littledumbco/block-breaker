@@ -12,8 +12,5 @@ EditorBuildSettings:
     path: Assets/_scenes/level_01.unity
     guid: b7e8053fe3dac5048a3872b173d9bc94
   - enabled: 1
-    path: Assets/_scenes/Lose.unity
+    path: Assets/_scenes/Finish.unity
     guid: 222b3a3dafc2e6045bb045c26b90ba23
-  - enabled: 1
-    path: Assets/_scenes/Win.unity
-    guid: ad6032946db585d41a0f2980388b6d2a

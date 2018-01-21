@@ -167,6 +167,7 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
+Assets/scripts/Ball.cs
 Assets/scripts/LevelManager.cs
 Assets/scripts/LoseCollider.cs
 Assets/scripts/MusicPlayer.cs
