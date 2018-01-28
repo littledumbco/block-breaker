@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour {
 
     // enabling the ability for the Ball script to access the paddle script
-    public Paddle paddle;
+    private Paddle paddle;
 
     // This has to be added as in the update function the ball is consistently being told
     // to stick to the paddle. The variable below is to check if the game has started or
@@ -17,6 +17,9 @@ public class Ball : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        paddle = GameObject.FindObjectOfType<Paddle>();
+
         // By getting the position of the ball and subtracting that by the position of the paddle
         // So in this scenario, the ball might be y 0.5 and the paddle might be y 0 - so it takes away 0.5
         // which puts the ball at 0.
